@@ -1,0 +1,138 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* custom css */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  max-width: 343px;
+
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.685);
+}
+
+label {
+  font-size: .938rem;
+  font-weight: 500;
+}
+
+input[type="text"] {
+  padding: 0.4em;
+  margin-bottom: 1em;
+}
+
+input[type="text"]:focus-visible {
+  outline: 2px solid #e5f8c7;
+}
+
+.book-list {
+  display: flex;
+  gap: .75em;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.book {
+  margin-top: 1em;
+  border: 2px solid hsla(296, 94%, 86%, 0.37);
+  border-radius: 0.35em;
+  padding: 1em;
+  position: relative;
+}
+
+.book img {
+  width: 140px;
+  object-fit: cover;
+  border-radius: 3px;
+  aspect-ratio: 1;
+}
+
+.book .title {
+  font-size: clamp(.85rem, 2vw, .938rem);
+  width: 140px;
+  margin: .35em 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title:hover {
+  white-space: normal;
+  overflow: visible;
+}
+
+.book:hover {
+  cursor: pointer;
+  filter: hue-rotate(90deg);
+}
+
+.book:hover > * {
+  opacity: 1;
+}
+
+.edit,
+.delete {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 0;
+  right: 40%;
+  width: 38px;
+  font-size: 0.75rem;
+  padding: 2px;
+
+  outline: none;
+  opacity: 0;
+}
+
+.delete {
+  width: 25px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  right: 0;
+  color: rgb(253, 126, 104);
+}
+
+:is(.edit, .delete):focus {
+  outline: none;
+}
+
+.book-edit {
+  font-size: 0.8rem;
+  width: 140px;
+
+  position: absolute;
+  bottom: .5rem;
+  left: 50%;
+  transform: translate(-50%, 50%);
+
+  padding: 0.35rem;
+  border-radius: .25rem;
+
+  width: 90%;
+  background-color: #a8c47abf;
+  box-shadow: 1px -4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1rem);
+  z-index: 1;
+  opacity: 0;
+  animation: slide-up 400ms forwards;
+}
+
+@keyframes slide-up {
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}

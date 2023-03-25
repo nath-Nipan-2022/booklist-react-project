@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "books": [
+    {
+      "title": "amazon plus Zoom",
+      "id": 1
+    },
+    {
+      "title": "#babu bhaiya",
+      "id": 2
+    },
+    {
+      "title": "Zindegi Pro",
+      "id": 7
+    },
+    {
+      "title": "Wow Light",
+      "id": 8
+    },
+    {
+      "title": "Oppo Xiomi",
+      "id": 9
+    }
+  ]
+}
