@@ -21,7 +21,6 @@ form {
   max-width: 343px;
 
   padding-bottom: 1em;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.685);
 }
 
 label {
@@ -38,10 +37,29 @@ input[type="text"]:focus-visible {
   outline: 2px solid #e5f8c7;
 }
 
+.book-create,
+.contents {
+  position: absolute;
+  top: 5%;
+  width: 50%;
+}
+
+.book-create {
+  left: 5%;
+
+}
+
+.contents {
+  right: 5%;
+  border-left: 1px solid rgba(73, 73, 73, 0.685);
+  padding-left: 1rem;
+}
+
 .book-list {
   display: flex;
   gap: .75em;
   justify-content: space-evenly;
+  align-items: start;
   flex-wrap: wrap;
 }
 
@@ -49,15 +67,22 @@ input[type="text"]:focus-visible {
   margin-top: 1em;
   border: 2px solid hsla(296, 94%, 86%, 0.37);
   border-radius: 0.35em;
-  padding: 1em;
+  padding: .5em;
   position: relative;
 }
 
-.book img {
+.book figure {
   width: 140px;
-  object-fit: cover;
-  border-radius: 3px;
+  margin: 0;
   aspect-ratio: 1;
+}
+
+.book img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  object-fit: cover;
+  background-color: #595b56;
 }
 
 .book .title {
@@ -69,7 +94,7 @@ input[type="text"]:focus-visible {
   white-space: nowrap;
 }
 
-.title:hover {
+.book:hover .title {
   white-space: normal;
   overflow: visible;
 }

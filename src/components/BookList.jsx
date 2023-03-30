@@ -1,14 +1,15 @@
-import React from "react";
+import useBookContext from "../hooks/useBookContext";
 import BookShow from "./BookShow";
 
 //todo: render Bookshow components by mapping through [books array]
 
 // always destructure the props object before using them
-const BookList = ({ books, onDelete, onEdit }) => {
+const BookList = () => {
+  const { books } = useBookContext();
+
   const renderBookList = () =>
-    books.map((book) => (
-      <BookShow book={book} onDelete={onDelete} onEdit={onEdit} key={book.id} />
-    ));
+    //note we also use props, it's common
+    books.map((book) => <BookShow book={book} key={book.id} />);
 
   return <div className="book-list">{renderBookList()}</div>;
 };

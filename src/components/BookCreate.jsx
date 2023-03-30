@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import useBookContext from "../hooks/useBookContext";
 
 //todo: taking input from user , passing to the parent!
 
-const BookCreate = ({ onCreate }) => {
+const BookCreate = () => {
   const [title, setTitle] = useState("");
+  const { createBook } = useBookContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title) {
-      onCreate(title); // pass the title to the parent
+      createBook(title); // pass the title to the parent
       setTitle(""); // empty the input field
     }
   };
